@@ -29,8 +29,8 @@ DOCUMENT_MAP = {
     ".py": TextLoader,
     ".pdf": PDFMinerLoader,
     ".csv": CSVLoader,
-    ".xls": UnstructuredExcelLoader,
-    ".xlsx": UnstructuredExcelLoader,
+    # ".xls": UnstructuredExcelLoader,
+    # ".xlsx": UnstructuredExcelLoader,
     ".docx": Docx2txtLoader,
     ".doc": Docx2txtLoader,
 }
@@ -44,8 +44,10 @@ EMBEDDING_MODEL_NAME = "hkunlp/instructor-large"
 # Select the Model ID and model_basename
 # load the LLM for generating Natural Language responses
 
-MODEL_ID = "TheBloke/Llama-2-7B-Chat-GGML"
-MODEL_BASENAME = "llama-2-7b-chat.ggmlv3.q4_0.bin"
+# MODEL_ID = "TheBloke/Llama-2-7B-Chat-GGML"
+# MODEL_BASENAME = "llama-2-7b-chat.ggmlv3.q4_0.bin"
+MODEL_ID = "stabilityai/StableBeluga2"
+MODEL_BASENAME = None #"llama-2-7b-chat.ggmlv3.q4_0.bin"
 
 # for HF models
 # MODEL_ID = "TheBloke/vicuna-7B-1.1-HF"

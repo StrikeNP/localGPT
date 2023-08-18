@@ -97,7 +97,8 @@ def load_model(device_type, model_id, model_basename=None):
             torch_dtype=torch.float16,
             low_cpu_mem_usage=True,
             trust_remote_code=True,
-            # max_memory={0: "15GB"} # Uncomment this line with you encounter CUDA out of memory errors
+            # max_memory={0: "20GB", 1: "20GB"},  # Uncomment this line with you encounter CUDA out of memory errors
+            # offload_folder="/mnt/ramdisk"
         )
         model.tie_weights()
     else:
@@ -192,7 +193,6 @@ def main(device_type, show_sources):
         client_settings=CHROMA_SETTINGS,
     )
     retriever = db.as_retriever()
-    
 
     template = """Use the following pieces of context to answer the question at the end. If you don't know the answer,\
     just say that you don't know, don't try to make up an answer.
